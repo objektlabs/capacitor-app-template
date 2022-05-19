@@ -1,0 +1,25 @@
+{
+	"name": "Example App",
+	"short_name": "Example App",
+	"description": "Capacitor 3 Example App",
+	"theme_color": "#31d53d",
+	"background_color": "#ffffff",
+	"display": "standalone",
+	"orientation": "portrait",
+	"scope": "/",
+	"start_url": "/?utm_source=pwa",
+	"icons": [
+		{
+			"src": "./assets/icons/app-192.png",
+			"type": "image/png",
+			"sizes": "192x192"
+		},
+		{
+			"src": "./assets/icons/app-512.png",
+			"type": "image/png",
+			"sizes": "512x512",
+			"purpose": "any maskable"
+		}
+	],
+	"shortcuts": []
+}
