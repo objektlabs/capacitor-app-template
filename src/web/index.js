@@ -5,11 +5,15 @@ import { SplashScreen } from '@capacitor/splash-screen';
 (async () => {
 
 	// Check for app updates.
-	const didUpdate = await AppUpdater.sync('https://objektlabs.github.io/capacitor-app-updater/example', 0);
+	if (process.env.NODE_ENV.toUpperCase() === 'PRODUCTION') {
 
-	// Stop processing if there was an update, as the updated would have triggered a page reload.
-	if (didUpdate) {
-		return;
+		const didUpdate = await AppUpdater.sync(process.env.WEB_SERVER_URL, 0);
+		alert(didUpdate);
+
+		// Stop processing if there was an update, as the updated would have triggered a page reload.
+		if (didUpdate) {
+			return;
+		}
 	}
 
 	// Load the app shell module.

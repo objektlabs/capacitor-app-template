@@ -1,0 +1,120 @@
+{
+	"env": {
+		"browser": true,
+		"es2021": true,
+		"node": true
+	},
+	"parser": "@babel/eslint-parser",
+	"parserOptions": {
+		"ecmaVersion": 12,
+		"sourceType": "module",
+		"requireConfigFile": false,
+		"experimentalDecorators": true
+	},
+	"plugins": [
+		"@babel",
+		"jsdoc"
+	],
+	"extends": [
+		"eslint:recommended",
+		"plugin:jsdoc/recommended"
+	],
+	"settings": {
+		"jsdoc": {
+			"mode": "typescript"
+		}
+	},
+	"ignorePatterns": [
+		"node_modules/**/*",
+		"src/android/**/*",
+		"src/ios/**/*"
+	],
+	"rules": {
+		"indent": [
+			"error",
+			"tab",
+			{
+				"SwitchCase": 1
+			}
+		],
+		"linebreak-style": [
+			"error",
+			"unix"
+		],
+		"quotes": [
+			"error",
+			"single"
+		],
+		"semi": [
+			"error",
+			"always"
+		],
+		"jsdoc/check-tag-names": [
+			"error",
+			{
+				"definedTags": [
+					"element",
+					"slot",
+					"fires",
+					"property",
+					"attribute",
+					"cssprop"
+				]
+			}
+		],
+		"jsdoc/require-description": [
+			"error",
+			{
+				"checkConstructors": true,
+				"checkGetters": true,
+				"checkSetters": true,
+				"descriptionStyle": "body"
+			}
+		],
+		"jsdoc/require-jsdoc": [
+			"error",
+			{
+				"checkConstructors": true,
+				"checkGetters": true,
+				"checkSetters": true,
+				"enableFixer": true,
+				"exemptEmptyConstructors": false,
+				"exemptEmptyFunctions": false,
+				"require": {
+					"ArrowFunctionExpression": false,
+					"ClassDeclaration": true,
+					"ClassExpression": true,
+					"FunctionDeclaration": true,
+					"FunctionExpression": true,
+					"MethodDefinition": true
+				}
+			}
+		],
+		"jsdoc/check-param-names": [
+			"error",
+			{
+				"checkDestructured": false
+			}
+		],
+		"jsdoc/require-param": [
+			"error",
+			{
+				"checkDestructured": false,
+				"checkDestructuredRoots": false
+			}
+		],
+		"jsdoc/require-returns": [
+			"error",
+			{
+				"checkConstructors": false,
+				"checkGetters": true,
+				"forceRequireReturn": true,
+				"forceReturnsWithAsync": true
+			}
+		],
+		"jsdoc/tag-lines": [
+			"error",
+			"any"
+		]
+	}
+}

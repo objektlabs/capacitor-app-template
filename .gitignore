@@ -1,6 +1,14 @@
-.idea/
-node_modules/
-.vscode/
-*.map
+# Build artifacts
+dist
+node_modules
+npm-debug.log
+capacitor.config.json
+
+# Local development
+*.env
+*.dev
 .DS_Store
-.sourcemaps
+
+# Docker
+Dockerfile
+docker-compose.yml

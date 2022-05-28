@@ -15,11 +15,13 @@
 	"type": "module",
 	"main": "index.js",
 	"scripts": {
-		"sync": "npx cap sync",
-		"run-android": "npx cap run android",
-		"run-ios": "npx cap run ios",
-		"run-web": "npx cap run web",
-		"test": "echo \"Error: no test specified\" && exit 0"
+		"build": "npx webpack build --config ./src/web/config/webpack.dev.js",
+		"release": "npx webpack build --config ./src/web/config/webpack.release.js",
+		"test": "echo \"Error: no test specified\" && exit 0",
+		"lint": "npx eslint -c .eslintrc.json ./src",
+		"shell:android": "npx cap run android",
+		"shell:ios": "npx cap run ios",
+		"shell:web": "npx http-server ./dist --port 3000"
 	},
 	"dependencies": {
 		"@capacitor/android": "^3.5.1",
@@ -27,9 +29,31 @@
 		"@capacitor/device": "^1.1.2",
 		"@capacitor/ios": "^3.5.1",
 		"@capacitor/splash-screen": "^1.2.2",
-		"@objekt/capacitor-app-updater": "^1.0.2"
+		"@objekt/capacitor-app-updater": "^1.0.3",
+		"eslint": "^8.16.0",
+		"eslint-plugin-jsdoc": "^39.3.2"
 	},
 	"devDependencies": {
-		"@capacitor/cli": "^3.5.1"
+		"@babel/core": "^7.18.2",
+		"@babel/eslint-parser": "^7.18.2",
+		"@babel/eslint-plugin": "^7.17.7",
+		"@babel/plugin-proposal-class-properties": "^7.17.12",
+		"@babel/plugin-proposal-decorators": "^7.18.2",
+		"@babel/plugin-proposal-private-methods": "^7.17.12",
+		"@babel/plugin-transform-runtime": "^7.18.2",
+		"@babel/preset-env": "^7.18.2",
+		"@capacitor/cli": "^3.5.1",
+		"babel-loader": "^8.2.5",
+		"clean-webpack-plugin": "^4.0.0",
+		"copy-webpack-plugin": "^11.0.0",
+		"css-loader": "^6.7.1",
+		"css-minimizer-webpack-plugin": "^4.0.0",
+		"html-webpack-plugin": "^5.5.0",
+		"http-server": "^14.1.0",
+		"style-loader": "^3.3.1",
+		"terser-webpack-plugin": "^5.3.1",
+		"webpack-cli": "^4.9.2",
+		"webpack-merge": "^5.8.0",
+		"workbox-webpack-plugin": "^6.5.3"
 	}
 }

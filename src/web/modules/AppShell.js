@@ -1,9 +1,15 @@
-//import { Device } from '@capacitor/device';
+import { Device } from '@capacitor/device';
 
 import './components/TitleBar.js';
 
+/**
+ * Main application shell component.
+ */
 export class AppShell extends HTMLElement {
 
+	/**
+	 * Initialise the component.
+	 */
 	constructor() {
 
 		super();
@@ -117,12 +123,15 @@ export class AppShell extends HTMLElement {
 		`;
 	}
 
+	/**
+	 * Setup the component when added to the DOM.
+	 * 
+	 * @returns {void}
+	 */
 	async connectedCallback() {
 
-		const self = this;
-
 		// Get the device info.
-		const deviceInfo = await Capacitor.Plugins.Device.getInfo();
+		const deviceInfo = await Device.getInfo();
 
 		this.shadowRoot.querySelector('#deviceInfo').innerHTML = `
 			<h2>Name:</h2>
@@ -144,25 +153,9 @@ export class AppShell extends HTMLElement {
 		`;
 
 		// Register a click handler to get the latest version of the app.
-		this.shadowRoot.querySelector('#sync-button').addEventListener('click', async (e) => {
+		this.shadowRoot.querySelector('#sync-button').addEventListener('click', async () => {
 
-			const { Camera } = Capacitor.Plugins;
-
-			try {
-				const photo = await Camera.getPhoto({
-					resultType: 'uri',
-				});
-
-				const image = self.shadowRoot.querySelector('#image');
-				if (!image) {
-					return;
-				}
-
-				image.src = photo.webPath;
-
-			} catch (e) {
-				console.warn('User cancelled', e);
-			}
+			console.log('Test');
 		});
 	}
 }

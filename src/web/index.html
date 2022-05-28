@@ -6,7 +6,8 @@
 		<base href="/">
 
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, viewport-fit=cover, shrink-to-fit=no, user-scalable=no">
+		<meta name="viewport"
+			content="width=device-width, height=device-height, initial-scale=1, viewport-fit=cover, shrink-to-fit=no, user-scalable=no">
 		<meta name="description" content="Capacitor 3 Example App">
 		<meta name="author" content="Objekt Labs">
 		<meta name="theme-color" content="#001a3a" />
@@ -44,13 +45,12 @@
 			}
 		</style>
 
-		<!-- Register app service - un-comment this code to enable service worker -->
-		<!-- 
 		<% if(process.env.NODE_ENV.toUpperCase()==='PRODUCTION' ) { %>
+			<!-- Register app service worker -->
 			<script>
 				if ('serviceWorker' in navigator) {
 
-					if(!('Capacitor' in window) || window.Capacitor.isNativePlatform() === false) {
+					if (!('Capacitor' in window) || window.Capacitor.isNativePlatform() === false) {
 
 						window.addEventListener('load', () => {
 
@@ -64,20 +64,9 @@
 				}
 			</script>
 			<% } %>
-		-->
 	</head>
 
 	<body>
 		<app-shell></app-shell>
-
-		<!--
-			This simple example uses Capacitor Core as a bundled file.
-			For large apps, we recommend using a bundler/module loader such as
-			rollup or webpack and importing Capacitor using ES2015 imports.
-		-->
-		<script src="./capacitor.js"></script>
-
-		<!--<script type="module" src="./index.js"></script>-->
-		<script type="module" src="./modules/AppShell.js"></script>
 	</body>
 </html>

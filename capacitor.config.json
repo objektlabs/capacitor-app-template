@@ -1,11 +1,25 @@
 {
-  "appId": "com.example.app",
-  "appName": "Example App",
-  "bundledWebRuntime": true,
-  "webDir": "www",
-  "plugins": {
-    "SplashScreen": {
-      "launchShowDuration": 0
-    }
-  }
+	"appId": "com.example.app",
+	"appName": "Example App",
+	"webDir": "./dist",
+	"bundledWebRuntime": false,
+	"loggingBehaviour": "debug",
+	"android": {
+		"path": "src/android"
+	},
+	"ios": {
+		"path": "src/ios"
+	},
+	"plugins": {
+		"SplashScreen": {
+			"launchAutoHide": false,
+			"androidScaleType": "CENTER_CROP",
+			"showSpinner": true,
+			"androidSpinnerStyle": "large",
+			"iosSpinnerStyle": "large",
+			"spinnerColor": "#ffffff",
+			"splashFullScreen": false,
+			"splashImmersive": false
+		}
+	}
 }

@@ -1,5 +1,11 @@
+/**
+ * Simple title bar component.
+ */
 export class TitleBar extends HTMLElement {
 
+	/**
+	 * Initialise the component.
+	 */
 	constructor() {
 
 		super();
