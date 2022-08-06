@@ -35,6 +35,8 @@ export default {
 			]
 		}),
 		new HtmlWebpackPlugin({
+			title: 'Capacitor 3 Example App',
+			filename: 'index.html',
 			template: './src/web/index.html'
 		})
 	],
